@@ -1,0 +1,219 @@
+:root {
+    --bg-primary: #0f0b1a;         /* Fundo bem escuro com tom roxo */
+    --bg-card: #1c142d;            /* Roxo escuro para os cards */
+    --text-primary: #f8fafc;
+    --text-secondary: #a799c7;      /* Roxo claro suave para textos secundários */
+    
+    --purple-primary: #8b5cf6;     /* Roxo vibrante (cor principal) */
+    --purple-hover: #7c3aed;       /* Roxo mais escuro para estados de hover */
+    
+    --teal-accent: #2dd4bf;        /* Verde-água/Turquesa vibrante (detalhes) */
+    --teal-hover: #14b8a6;         /* Verde-água mais escuro */
+    --teal-bg: rgba(45, 212, 191, 0.15); /* Fundo sutil verde-água */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(15, 11, 26, 0.85);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.logo {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--teal-accent);
+}
+
+.navbar a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--teal-accent);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero h1 span {
+    color: var(--teal-accent);
+}
+
+.hero p {
+    color: var(--text-secondary);
+    margin: 15px 0 25px;
+    font-size: 1.2em;
+    max-width: 600px;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-hover) 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid var(--teal-accent);
+    color: var(--teal-accent);
+}
+
+.btn.secondary:hover {
+    background: var(--teal-accent);
+    color: var(--bg-primary);
+    box-shadow: 0 4px 15px rgba(45, 212, 191, 0.4);
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+    padding: 80px 10%;
+}
+
+.section h2 {
+    margin-bottom: 30px;
+    color: var(--purple-primary);
+    font-size: 2em;
+    border-left: 4px solid var(--teal-accent);
+    padding-left: 12px;
+}
+
+/* ===== PROJETOS ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--teal-accent);
+}
+
+.project-card h3 {
+    color: var(--teal-accent);
+    margin-bottom: 10px;
+}
+
+.tags {
+    margin: 15px 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background: var(--teal-bg);
+    color: var(--teal-accent);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.project-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: var(--teal-accent);
+}
+
+/* ===== HABILIDADES ===== */
+.skills-list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.skill-tag {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    transition: all 0.3s;
+}
+
+.skill-tag:hover {
+    border-color: var(--teal-accent);
+    color: var(--teal-accent);
+    background: var(--teal-bg);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+    border-top: 1px solid rgba(139, 92, 246, 0.15);
+    background: var(--bg-primary);
+}
